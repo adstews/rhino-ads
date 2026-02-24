@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<title>Rhino Ads — Disciplined Marketing That Drives Revenue</title>
+<meta name="description" content="Rhino Ads is a full-service marketing agency specializing in advertising, web design, SEO, branding, and video production. We grow revenue through high-impact marketing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#004466;
+  --navy-dark:#001A45;
+  --red:#e93f33;
+  --red-hover:#d4342a;
+  --teal:#42BFC1;
+  --dark:#2E2E2E;
+  --text:#333;
+  --text-light:#666;
+  --bg:#fff;
+  --bg-off:#f5f6f5;
+  --border:#ddd;
+  --footer-bg:#1a1a2e;
+  --max-w:1200px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--text);line-height:1.6;background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 32px}
+
+/* ═══════════════════════════════
+   NAV
+   ═══════════════════════════════ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0;transition:background .4s,box-shadow .4s}
+.nav.scrolled{background:var(--navy);box-shadow:0 2px 20px rgba(0,0,0,.15)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo{font-size:22px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:36px;height:36px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.85);transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-links .has-dropdown{position:relative;cursor:pointer}
+.nav-links .has-dropdown:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown{position:absolute;top:100%;left:-12px;min-width:180px;background:#fff;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.12);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .25s}
+.dropdown a{display:block;padding:10px 20px;font-size:13px;color:var(--dark);text-transform:none;letter-spacing:0;font-weight:500}
+.dropdown a:hover{background:var(--bg-off);color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 28px;border-radius:6px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;border:none;cursor:pointer;transition:all .3s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-hover);transform:translateY(-2px);box-shadow:0 4px 16px rgba(233,63,51,.3)}
+.btn-outline-white{border:2px solid #fff;background:transparent;color:#fff}
+.btn-outline-white:hover{background:#fff;color:var(--navy)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-dark);transform:translateY(-2px)}
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}
+.mobile-toggle span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:all .3s}
+
+/* ═══════════════════════════════
+   HERO
+   ═══════════════════════════════ */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:var(--navy);overflow:hidden}
+.hero-video{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-video video{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.25);z-index:1}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(transparent,rgba(0,26,69,.5));z-index:1}
+.hero-content{position:relative;z-index:2;max-width:650px}
+.hero-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--teal);margin-bottom:20px}
+.hero-label span{width:24px;height:2px;background:var(--teal);display:inline-block}
+.hero h1{font-size:clamp(40px,5.5vw,72px);font-weight:800;line-height:1.05;letter-spacing:-.02em;color:#fff;margin-bottom:20px;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero-sub{font-size:clamp(18px,2.2vw,26px);font-weight:300;color:rgba(255,255,255,.8);line-height:1.5;margin-bottom:40px}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
+
+/* ═══════════════════════════════
+   WORK SPOTLIGHT
+   ═══════════════════════════════ */
+.work{padding:100px 0;background:var(--bg)}
+.section-eyebrow{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--teal);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.section-eyebrow span{width:24px;height:2px;background:var(--teal);display:inline-block}
+.section-heading{font-size:clamp(32px,4vw,48px);font-weight:800;color:var(--navy-dark);line-height:1.1;margin-bottom:16px;text-transform:uppercase;letter-spacing:-.01em}
+.section-desc{font-size:17px;color:var(--text-light);max-width:540px;line-height:1.7;margin-bottom:48px}
+.work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.work-card{position:relative;background:var(--bg-off);border-radius:12px;overflow:hidden;aspect-ratio:4/3;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.work-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.1)}
+.work-card-bg{position:absolute;inset:0;background:var(--navy);transition:opacity .3s}
+.work-card:nth-child(1) .work-card-bg{background:linear-gradient(135deg,#1a3a5c,#004466)}
+.work-card:nth-child(2) .work-card-bg{background:linear-gradient(135deg,#2d1b4e,#5b2d8e)}
+.work-card:nth-child(3) .work-card-bg{background:linear-gradient(135deg,#0d3b2e,#1a8a6a)}
+.work-card:nth-child(4) .work-card-bg{background:linear-gradient(135deg,#3d1f1f,#8b3a3a)}
+.work-card:nth-child(5) .work-card-bg{background:linear-gradient(135deg,#1a2a4a,#3a5a8a)}
+.work-card:nth-child(6) .work-card-bg{background:linear-gradient(135deg,#2a1a0a,#6a4a2a)}
+.work-card-content{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%;padding:24px;color:#fff}
+.work-card-industry{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--teal);margin-bottom:8px}
+.work-card-title{font-size:18px;font-weight:700;line-height:1.3}
+.work-card-desc{font-size:13px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.5;max-height:0;overflow:hidden;transition:max-height .3s}
+.work-card:hover .work-card-desc{max-height:80px}
+
+/* ═══════════════════════════════
+   SERVICES
+   ═══════════════════════════════ */
+.services{padding:100px 0;background:var(--bg-off)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:#fff;border-radius:12px;padding:36px;transition:transform .3s,box-shadow .3s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.service-icon{width:52px;height:52px;border-radius:12px;background:rgba(66,191,193,.1);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--teal)}
+.service-card h3{font-size:20px;font-weight:700;color:var(--navy-dark);margin-bottom:12px}
+.service-list{list-style:none;margin-bottom:20px}
+.service-list li{font-size:14px;color:var(--text-light);padding:5px 0;padding-left:16px;position:relative}
+.service-list li::before{content:'';position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.service-link{font-size:13px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.5px;display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
+.service-link:hover{gap:10px}
+.service-link svg{transition:transform .2s}
+
+/* ═══════════════════════════════
+   INDUSTRIES
+   ═══════════════════════════════ */
+.industries{padding:100px 0;background:var(--bg)}
+.industries-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.industry-card{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:3/4;cursor:pointer}
+.industry-card-bg{position:absolute;inset:0;background:var(--navy);transition:transform .5s}
+.industry-card:nth-child(1) .industry-card-bg{background:linear-gradient(180deg,#004466,#006688)}
+.industry-card:nth-child(2) .industry-card-bg{background:linear-gradient(180deg,#1a4a2e,#2d7a4e)}
+.industry-card:nth-child(3) .industry-card-bg{background:linear-gradient(180deg,#3a1a5a,#6a3a8a)}
+.industry-card:nth-child(4) .industry-card-bg{background:linear-gradient(180deg,#5a2a1a,#8a4a2a)}
+.industry-card:nth-child(5) .industry-card-bg{background:linear-gradient(180deg,#1a2a4a,#2a4a7a)}
+.industry-card:nth-child(6) .industry-card-bg{background:linear-gradient(180deg,#2a3a1a,#5a7a2a)}
+.industry-card:nth-child(7) .industry-card-bg{background:linear-gradient(180deg,#4a1a2a,#7a2a4a)}
+.industry-card:nth-child(8) .industry-card-bg{background:linear-gradient(180deg,#1a3a4a,#2a6a7a)}
+.industry-card:hover .industry-card-bg{transform:scale(1.05)}
+.industry-card::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.6));z-index:1}
+.industry-card-content{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;height:100%;padding:24px;color:#fff}
+.industry-card-content h3{font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.industry-card-content p{font-size:13px;color:rgba(255,255,255,.7);margin-top:6px;line-height:1.5;max-height:0;overflow:hidden;transition:max-height .3s}
+.industry-card:hover .industry-card-content p{max-height:60px}
+
+/* ═══════════════════════════════
+   TESTIMONIALS
+   ═══════════════════════════════ */
+.testimonials{padding:100px 0;background:var(--bg-off);overflow:hidden}
+.testimonials-track-wrap{position:relative;margin-top:48px}
+.testimonials-track{display:flex;gap:24px;transition:transform .5s ease}
+.testimonial-slide{flex-shrink:0;width:380px;background:#fff;border-radius:12px;padding:36px;box-shadow:0 2px 12px rgba(0,0,0,.04);transition:transform .3s,box-shadow .3s,opacity .3s;opacity:.5;transform:scale(.92)}
+.testimonial-slide.active{opacity:1;transform:scale(1);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.testimonial-quote{font-size:16px;color:var(--text);line-height:1.7;margin-bottom:24px;font-style:italic;position:relative;padding-left:20px;border-left:3px solid var(--teal)}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.testimonial-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--teal));display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff}
+.testimonial-name{font-size:15px;font-weight:700;color:var(--navy-dark)}
+.testimonial-role{font-size:12px;color:var(--text-light)}
+.testimonials-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:36px}
+.testimonials-nav button{width:44px;height:44px;border-radius:50%;border:2px solid var(--border);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--text-light)}
+.testimonials-nav button:hover{border-color:var(--navy);color:var(--navy)}
+.testimonials-dots{display:flex;gap:8px;margin:0 16px}
+.testimonials-dots span{width:10px;height:10px;border-radius:50%;background:var(--border);cursor:pointer;transition:background .2s}
+.testimonials-dots span.active{background:var(--navy)}
+
+/* ═══════════════════════════════
+   CTA / FOOTER
+   ═══════════════════════════════ */
+.cta-footer{padding:100px 0;background:var(--footer-bg);color:#fff}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.cta-left .section-heading{color:#fff}
+.cta-left .section-desc{color:rgba(255,255,255,.6);max-width:none}
+.cta-contact{margin-top:32px}
+.cta-contact a{display:block;font-size:15px;color:rgba(255,255,255,.7);margin-bottom:8px;transition:color .2s}
+.cta-contact a:hover{color:var(--teal)}
+.cta-social{display:flex;gap:16px;margin-top:24px}
+.cta-social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);transition:all .2s;font-size:14px}
+.cta-social a:hover{border-color:var(--teal);color:var(--teal)}
+.cta-form{display:flex;flex-direction:column;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-field{display:flex;flex-direction:column;gap:6px}
+.form-field.full{grid-column:1/-1}
+.form-field label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.5)}
+.form-field input,.form-field select{padding:14px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:15px;font-family:inherit;transition:border-color .2s;outline:none;-webkit-appearance:none}
+.form-field input::placeholder{color:rgba(255,255,255,.3)}
+.form-field input:focus,.form-field select:focus{border-color:var(--teal)}
+.form-field select{cursor:pointer}
+.form-field select option{background:var(--footer-bg);color:#fff}
+.cta-form .btn{margin-top:8px;width:100%}
+
+.footer-bottom{margin-top:80px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between}
+.footer-bottom p{font-size:13px;color:rgba(255,255,255,.4)}
+.footer-bottom a{color:rgba(255,255,255,.4);transition:color .2s}
+.footer-bottom a:hover{color:var(--teal)}
+
+/* ═══════════════════════════════
+   SCROLL REVEAL
+   ═══════════════════════════════ */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ═══════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════ */
+@media(max-width:1024px){
+  .work-grid{grid-template-columns:repeat(3,1fr)}
+  .industries-grid{grid-template-columns:repeat(2,1fr)}
+  .cta-grid{grid-template-columns:1fr;gap:48px}
+}
+@media(max-width:768px){
+  .container{padding:0 20px}
+  .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--navy);flex-direction:column;justify-content:center;align-items:center;gap:24px;z-index:999}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:18px}
+  .dropdown{position:static;opacity:1;visibility:visible;transform:none;background:transparent;box-shadow:none;padding:0;text-align:center}
+  .dropdown a{color:rgba(255,255,255,.6);padding:8px 20px}
+  .mobile-toggle{display:block;z-index:1001}
+  .mobile-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+  .mobile-toggle.open span:nth-child(2){opacity:0}
+  .mobile-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+  .work-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:1fr}
+  .industries-grid{grid-template-columns:repeat(2,1fr)}
+  .form-row{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(32px,8vw,48px)}
+  .hero{min-height:auto;padding:140px 0 80px}
+  .testimonial-slide{width:300px}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+}
+@media(max-width:480px){
+  .work-grid{grid-template-columns:1fr}
+  .industries-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" width="36" height="36">
+          <rect width="36" height="36" rx="8" fill="var(--red)"/>
+          <!-- Rhino silhouette -->
+          <path d="M6 22.5c0-1 .4-1.8 1-2.3.3-.3.5-.7.5-1.2v-1.5c0-1.5.6-2.9 1.7-3.9l.8-.7c.5-.5.8-1.1.8-1.8v-.6c0-.8.5-1.5 1.2-1.8l2.5-1c.5-.2 1-.2 1.5 0l1.5.6c.8.3 1.7.5 2.5.5h2c1.7 0 3.2.7 4.3 1.8l1.2 1.2c.7.7 1 1.6 1 2.5v2.2c0 .8-.3 1.5-.8 2l-1.2 1.2v2.3c0 .8-.7 1.5-1.5 1.5h-1c-.8 0-1.5-.7-1.5-1.5V20h-1v2.5c0 .8-.7 1.5-1.5 1.5h-1c-.8 0-1.5-.7-1.5-1.5V20h-3.5l-2 2.8c-.3.4-.8.7-1.3.7H9.5c-.8 0-1.5-.3-2.2-.7-.8-.5-1.3-1.3-1.3-2.3zm5.5-7a1 1 0 100-2 1 1 0 000 2z" fill="#fff"/>
+          <!-- Horn -->
+          <path d="M8.5 14l-2-3.5c-.2-.3 0-.7.4-.7h2.3c.3 0 .5.2.6.4l.7 2.3" fill="#fff" opacity=".9"/>
+        </svg>
+        Rhino Ads
+      </a>
+      <div class="nav-links" id="nav-links">
+        <div class="has-dropdown">
+          <a href="#services">Services</a>
+          <div class="dropdown">
+            <a href="#services">Advertising</a>
+            <a href="#services">Web Design</a>
+            <a href="#services">SEO</a>
+            <a href="#services">Branding</a>
+            <a href="#services">Video</a>
+            <a href="#services">Apps</a>
+          </div>
+        </div>
+        <div class="has-dropdown">
+          <a href="#industries">Industries</a>
+          <div class="dropdown">
+            <a href="#industries">Roofing</a>
+            <a href="#industries">Finance</a>
+            <a href="#industries">E-Commerce</a>
+            <a href="#industries">Real Estate</a>
+            <a href="#industries">Local Restaurant</a>
+          </div>
+        </div>
+        <a href="#work">Work</a>
+        <a href="#contact" class="btn btn-red">Let's Talk</a>
+      </div>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-video">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="https://www.cardwellbeach.com/wp-content/uploads/2023/11/CARDWELL-BEACH-WAVE-LOOP-2.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-label"><span></span> Full-Service Marketing Agency</div>
+      <h1>Discipline<br>Creates <em>Momentum</em></h1>
+      <p class="hero-sub">We grow revenue through disciplined, high-impact marketing that actually moves the needle.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-red">Get a Free Strategy Audit</a>
+        <a href="#work" class="btn btn-outline-white">See Our Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WORK SPOTLIGHT ═══ -->
+<section class="work section" id="work">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow"><span></span> Work Spotlight</div>
+      <div class="section-heading">A Method to<br>the Magic</div>
+      <p class="section-desc">Great work only matters if it delivers results. Here are some of the brands we've helped grow.</p>
+    </div>
+    <div class="work-grid reveal">
+      <div class="work-card">
+        <div class="work-card-bg"></div>
+        <div class="work-card-content">
+          <div class="work-card-industry">Roofing</div>
+          <div class="work-card-title">Gunner Roofing</div>
+          <div class="work-card-desc">Increased lead generation 52% through targeted paid media and local SEO.</div>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-card-bg"></div>
+        <div class="work-card-content">
+          <div class="work-card-industry">Local Restaurant</div>
+          <div class="work-card-title">The Ginger Man</div>
+          <div class="work-card-desc">Increased weekly sales 40% through targeted paid social campaigns.</div>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-card-bg"></div>
+        <div class="work-card-content">
+          <div class="work-card-industry">E-Commerce</div>
+          <div class="work-card-title">Centr Fitness Equipment</div>
+          <div class="work-card-desc">Scaled ROAS from 2.1x to 5.8x with creative refresh and media buying.</div>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-card-bg"></div>
+        <div class="work-card-content">
+          <div class="work-card-industry">Finance</div>
+          <div class="work-card-title">Apex Wealth Advisors</div>
+          <div class="work-card-desc">Lead generation campaign producing 120+ qualified leads per month.</div>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-card-bg"></div>
+        <div class="work-card-content">
+          <div class="work-card-industry">Real Estate</div>
+          <div class="work-card-title">Summit Properties</div>
+          <div class="work-card-desc">Digital-first brand launch with 200% increase in web inquiries.</div>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-card-bg"></div>
+        <div class="work-card-content">
+          <div class="work-card-industry">Nonprofit</div>
+          <div class="work-card-title">Horizon Foundation</div>
+          <div class="work-card-desc">Awareness campaign reaching 2M+ impressions in first quarter.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="services section" id="services">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow"><span></span> What We Do</div>
+      <div class="section-heading">Results That Move<br>the Needle</div>
+      <p class="section-desc">From strategy to execution, we cover every channel your brand needs to grow.</p>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+        </div>
+        <h3>Advertising</h3>
+        <ul class="service-list">
+          <li>Paid Search & Social</li>
+          <li>Connected TV & Streaming</li>
+          <li>Creative Development</li>
+          <li>Analytics & Optimization</li>
+        </ul>
+        <a href="#contact" class="service-link">Learn More <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Branding & Campaigns</h3>
+        <ul class="service-list">
+          <li>Brand Development</li>
+          <li>Logo & Naming</li>
+          <li>Campaign Strategy</li>
+          <li>Market Research</li>
+        </ul>
+        <a href="#contact" class="service-link">Learn More <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        </div>
+        <h3>Websites</h3>
+        <ul class="service-list">
+          <li>User Experience Design</li>
+          <li>Creative Development</li>
+          <li>Web Development</li>
+          <li>E-Commerce</li>
+        </ul>
+        <a href="#contact" class="service-link">Learn More <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+        </div>
+        <h3>Video Production</h3>
+        <ul class="service-list">
+          <li>Strategy & Storyboarding</li>
+          <li>Live Action Production</li>
+          <li>Motion Graphics</li>
+          <li>Post-Production</li>
+        </ul>
+        <a href="#contact" class="service-link">Learn More <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        </div>
+        <h3>Mobile Apps</h3>
+        <ul class="service-list">
+          <li>Consumer Apps</li>
+          <li>Business & Enterprise</li>
+          <li>MVPs & Prototypes</li>
+          <li>iOS & Android</li>
+        </ul>
+        <a href="#contact" class="service-link">Learn More <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <h3>SEO</h3>
+        <ul class="service-list">
+          <li>On-Page Optimization</li>
+          <li>E-Commerce & Local SEO</li>
+          <li>Off-Page SEO</li>
+          <li>Strategy & Performance</li>
+        </ul>
+        <a href="#contact" class="service-link">Learn More <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INDUSTRIES ═══ -->
+<section class="industries section" id="industries">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow"><span></span> Industry Expertise</div>
+      <div class="section-heading">Deep Vertical<br>Knowledge</div>
+      <p class="section-desc">We specialize in industries where we can deliver outsized results.</p>
+    </div>
+    <div class="industries-grid reveal">
+      <div class="industry-card">
+        <div class="industry-card-bg"></div>
+        <div class="industry-card-content">
+          <h3>Roofing</h3>
+          <p>Lead generation and local dominance for roofing contractors.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-bg"></div>
+        <div class="industry-card-content">
+          <h3>Finance</h3>
+          <p>Wealth management, fintech, and banking growth.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-bg"></div>
+        <div class="industry-card-content">
+          <h3>E-Commerce</h3>
+          <p>DTC brands scaling with paid media and creative.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-bg"></div>
+        <div class="industry-card-content">
+          <h3>Real Estate</h3>
+          <p>Lead generation for residential and commercial.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-bg"></div>
+        <div class="industry-card-content">
+          <h3>Local Restaurant</h3>
+          <p>Drive foot traffic and boost sales with paid social campaigns.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-bg"></div>
+        <div class="industry-card-content">
+          <h3>Restaurants</h3>
+          <p>Local marketing, delivery apps, and brand building.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-bg"></div>
+        <div class="industry-card-content">
+          <h3>Nonprofit</h3>
+          <p>Fundraising campaigns and awareness at scale.</p>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-bg"></div>
+        <div class="industry-card-content">
+          <h3>B2B</h3>
+          <p>ABM, demand gen, and enterprise lead programs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonials section" id="testimonials">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow"><span></span> Testimonials</div>
+      <div class="section-heading">What Clients Say</div>
+      <p class="section-desc">Don't take our word for it. Hear from the brands we've helped grow.</p>
+    </div>
+  </div>
+  <div class="testimonials-track-wrap">
+    <div class="testimonials-track" id="testimonials-track">
+      <div class="testimonial-slide">
+        <div class="testimonial-quote">Rhino Ads grew our practice 30% in one year. The results speak for themselves. Their team is impeccably professional and responsive.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">DR</div>
+          <div><div class="testimonial-name">Dr. Rachel Kim</div><div class="testimonial-role">CEO, Meridian Health Systems</div></div>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <div class="testimonial-quote">We tripled our demo pipeline in 6 months. The rebrand positioned us exactly where we needed to be in the market.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JT</div>
+          <div><div class="testimonial-name">James Torres</div><div class="testimonial-role">Owner, The Ginger Man</div></div>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <div class="testimonial-quote">Our ROAS went from barely breaking even to 5.8x. The creative team understands what converts and they move fast.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AS</div>
+          <div><div class="testimonial-name">Anna Svensson</div><div class="testimonial-role">CMO, Centr Fitness Equipment</div></div>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <div class="testimonial-quote">Outstanding experience from start to finish. They built our entire digital presence and the leads haven't stopped coming in.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MR</div>
+          <div><div class="testimonial-name">Michael Reeves</div><div class="testimonial-role">Managing Partner, Apex Wealth</div></div>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <div class="testimonial-quote">We needed a partner who understood nonprofits. Rhino Ads delivered a campaign that exceeded every KPI we set.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">LW</div>
+          <div><div class="testimonial-name">Linda Washington</div><div class="testimonial-role">Director, Horizon Foundation</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-nav">
+      <button id="test-prev" aria-label="Previous">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <div class="testimonials-dots" id="test-dots">
+        <span class="active"></span><span></span><span></span><span></span><span></span>
+      </div>
+      <button id="test-next" aria-label="Next">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA FOOTER ═══ -->
+<section class="cta-footer" id="contact">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-left">
+        <div class="section-eyebrow" style="color:var(--teal)"><span style="background:var(--teal)"></span> Reach Out</div>
+        <div class="section-heading">Work with us.</div>
+        <p class="section-desc">Fill out the form to speak with someone from our team. We'll get back to you within 24 hours.</p>
+        <div class="cta-contact">
+          <a href="mailto:hello@rhinoads.com">hello@rhinoads.com</a>
+          <a href="tel:+16468013175">(646) 801-3175</a>
+        </div>
+        <div class="cta-social">
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="#" aria-label="X / Twitter"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        </div>
+      </div>
+      <div class="cta-right">
+        <form class="cta-form" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fname">First Name *</label>
+              <input type="text" id="fname" placeholder="John" required>
+            </div>
+            <div class="form-field">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="email">Email *</label>
+              <input type="email" id="email" placeholder="john@company.com" required>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone *</label>
+              <input type="tel" id="phone" placeholder="(555) 123-4567" required>
+            </div>
+          </div>
+          <div class="form-field full">
+            <label for="website">Website URL</label>
+            <input type="url" id="website" placeholder="https://yourcompany.com">
+          </div>
+          <div class="form-field full">
+            <label for="budget">Monthly Marketing Budget</label>
+            <select id="budget">
+              <option value="">Select a range...</option>
+              <option>Under $5,000</option>
+              <option>$5,000 - $10,000</option>
+              <option>$10,000 - $25,000</option>
+              <option>$25,000 - $50,000</option>
+              <option>$50,000+</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-red">Get Your Free Audit</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Rhino Ads. All rights reserved.</p>
+      <div style="display:flex;gap:20px">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ── Nav scroll ──
+const nav = document.getElementById('nav');
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, {passive: true});
+
+// ── Mobile menu ──
+const toggle = document.getElementById('mobile-toggle');
+const navLinks = document.getElementById('nav-links');
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  toggle.classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    toggle.classList.remove('open');
+  });
+});
+
+// ── Testimonials carousel ──
+const track = document.getElementById('testimonials-track');
+const slides = track.querySelectorAll('.testimonial-slide');
+const dots = document.querySelectorAll('#test-dots span');
+let current = 0;
+const total = slides.length;
+
+function updateCarousel() {
+  // Center the active slide
+  const slideWidth = slides[0].offsetWidth + 24; // gap
+  const containerWidth = window.innerWidth;
+  const offset = (containerWidth / 2) - (slides[0].offsetWidth / 2) - (current * slideWidth);
+  track.style.transform = `translateX(${offset}px)`;
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+}
+
+document.getElementById('test-next').addEventListener('click', () => {
+  current = (current + 1) % total;
+  updateCarousel();
+});
+document.getElementById('test-prev').addEventListener('click', () => {
+  current = (current - 1 + total) % total;
+  updateCarousel();
+});
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => { current = i; updateCarousel(); });
+});
+
+// Auto-advance every 5s
+let autoplay = setInterval(() => { current = (current + 1) % total; updateCarousel(); }, 5000);
+track.parentElement.addEventListener('mouseenter', () => clearInterval(autoplay));
+track.parentElement.addEventListener('mouseleave', () => {
+  autoplay = setInterval(() => { current = (current + 1) % total; updateCarousel(); }, 5000);
+});
+
+updateCarousel();
+window.addEventListener('resize', updateCarousel);
+
+// ── Scroll reveal ──
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+reveals.forEach(el => revealObserver.observe(el));
+
+// ── Smooth scroll ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
