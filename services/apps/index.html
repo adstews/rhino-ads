@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<title>Mobile App Development — Rhino Ads</title>
+<meta name="description" content="Rhino Ads builds premium mobile apps driven by deep UX expertise. Consumer apps, enterprise solutions, and MVPs for iOS, Android, and web.">
+<meta name="keywords" content="mobile app development, iOS app, Android app, UX design, app design, MVP development, enterprise apps, consumer apps, cross-platform apps">
+<link rel="canonical" href="https://rhinoads.co/services/apps/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Rhino Ads">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mobile App Development — Rhino Ads">
+<meta property="og:description" content="Premium app development driven by deep UX expertise. Consumer apps, enterprise tools, and MVPs built to scale.">
+<meta property="og:url" content="https://rhinoads.co/services/apps/">
+<meta property="og:site_name" content="Rhino Ads">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mobile App Development — Rhino Ads">
+<meta name="twitter:description" content="Premium app development driven by deep UX expertise. Consumer apps, enterprise tools, and MVPs built to scale.">
+<link rel="icon" type="image/svg+xml" href="../../rhino-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#004466;
+  --navy-dark:#001A45;
+  --red:#e93f33;
+  --red-hover:#d4342a;
+  --teal:#42BFC1;
+  --dark:#2E2E2E;
+  --text:#333;
+  --text-light:#666;
+  --bg:#fff;
+  --bg-off:#f5f6f5;
+  --border:#ddd;
+  --footer-bg:#1a1a2e;
+  --max-w:1200px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--text);line-height:1.6;background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 32px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--navy);box-shadow:0 2px 20px rgba(0,0,0,.15)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo{font-size:22px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:36px;height:36px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.85);transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-links .has-dropdown{position:relative;cursor:pointer}
+.nav-links .has-dropdown:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown{position:absolute;top:100%;left:-12px;min-width:180px;background:#fff;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.12);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .25s}
+.dropdown a{display:block;padding:10px 20px;font-size:13px;color:var(--dark);text-transform:none;letter-spacing:0;font-weight:500}
+.dropdown a:hover{background:var(--bg-off);color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 28px;border-radius:6px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;border:none;cursor:pointer;transition:all .3s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-hover)}
+.btn-outline-white{border:1px solid rgba(255,255,255,.3);color:#fff;background:transparent}
+.btn-outline-white:hover{background:rgba(255,255,255,.1)}
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.mobile-toggle span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:all .3s}
+
+/* HERO */
+.hero{position:relative;min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%)}
+.hero-content{position:relative;z-index:2;max-width:800px;padding:120px 0 80px}
+.hero h1{font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.15;letter-spacing:-.5px;margin-bottom:20px}
+.hero p{font-size:clamp(16px,1.8vw,18px);color:rgba(255,255,255,.85);max-width:620px;margin:0 auto 36px;line-height:1.7}
+.hero-ctas{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+
+/* SECTIONS */
+.section{padding:100px 0}
+.section-eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--red);margin-bottom:16px}
+.section-eyebrow span{width:28px;height:2px;background:var(--red);border-radius:2px}
+.section-heading{font-size:clamp(28px,5vw,42px);font-weight:800;color:var(--navy-dark);line-height:1.15;margin-bottom:20px}
+.section-desc{font-size:17px;color:var(--text-light);max-width:600px;line-height:1.7;margin-bottom:48px}
+
+/* STATS */
+.stats{padding:80px 0;background:var(--bg-off)}
+.stats-header{text-align:center;margin-bottom:48px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+.stat-num{font-size:clamp(36px,4vw,52px);font-weight:800;color:var(--navy);letter-spacing:-.02em}
+.stat-num em{color:var(--teal);font-style:normal}
+.stat-label{font-size:14px;font-weight:700;color:var(--navy-dark);margin-top:4px;text-transform:uppercase;letter-spacing:1px}
+.stat-desc{font-size:14px;color:var(--text-light);margin-top:8px;line-height:1.6}
+
+/* SERVICE CARDS */
+.service-types{padding:100px 0;background:var(--bg)}
+.service-types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.st-card{background:var(--bg-off);border-radius:12px;padding:36px;border:1px solid var(--border);transition:transform .3s,box-shadow .3s}
+.st-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.st-card-icon{width:56px;height:56px;border-radius:14px;background:rgba(66,191,193,.1);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--teal)}
+.st-card h3{font-size:20px;font-weight:700;color:var(--navy-dark);margin-bottom:10px}
+.st-card p{font-size:15px;color:var(--text-light);line-height:1.7}
+
+/* VALUE PROP / CORE CAPABILITIES */
+.value{padding:100px 0;background:var(--bg-off)}
+.value-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.value-text h3{font-size:20px;font-weight:700;color:var(--navy-dark);margin-bottom:10px}
+.value-text p{font-size:15px;color:var(--text-light);line-height:1.7;margin-bottom:28px}
+.value-images{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.value-images img{border-radius:10px;width:100%;height:200px;object-fit:cover}
+
+/* GALLERY */
+.gallery{padding:100px 0;background:var(--bg)}
+.gallery-masonry{columns:3;column-gap:16px}
+.gallery-masonry img{width:100%;border-radius:10px;margin-bottom:16px;break-inside:avoid;transition:transform .3s}
+.gallery-masonry img:hover{transform:scale(1.02)}
+
+/* PROCESS */
+.process{padding:100px 0;background:var(--bg)}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.process-card{background:var(--bg-off);border-radius:12px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.process-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.process-card img{width:100%;height:180px;object-fit:cover}
+.process-card-body{padding:24px}
+.process-card-num{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--teal);margin-bottom:8px}
+.process-card h3{font-size:18px;font-weight:700;color:var(--navy-dark);margin-bottom:8px}
+.process-card p{font-size:14px;color:var(--text-light);line-height:1.65}
+
+/* EXPERTISE */
+.expertise{padding:100px 0;background:var(--bg-off)}
+.expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.exp-card{background:#fff;border-radius:12px;padding:32px;border:1px solid var(--border);transition:border-color .3s,box-shadow .3s}
+.exp-card:hover{border-color:rgba(66,191,193,.4);box-shadow:0 4px 24px rgba(66,191,193,.08)}
+.exp-card-icon{width:48px;height:48px;border-radius:12px;background:rgba(66,191,193,.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--teal)}
+.exp-card h3{font-size:17px;font-weight:700;color:var(--navy-dark);margin-bottom:8px}
+.exp-card p{font-size:14px;color:var(--text-light);line-height:1.65}
+
+/* TESTIMONIALS */
+.testimonials{padding:100px 0;background:var(--bg)}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi-card{background:var(--bg-off);border-radius:12px;padding:32px;border:1px solid var(--border)}
+.testi-card blockquote{font-size:16px;color:var(--text);line-height:1.7;margin-bottom:20px;font-style:italic;position:relative;padding-left:20px;border-left:3px solid var(--teal)}
+.testi-author{font-size:14px;font-weight:700;color:var(--navy-dark)}
+.testi-role{font-size:12px;color:var(--text-light)}
+
+/* FAQ */
+.faq{padding:100px 0;background:var(--bg-off)}
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 0;background:none;border:none;color:var(--navy-dark);font-size:16px;font-weight:600;cursor:pointer;text-align:left;font-family:inherit;gap:16px}
+.faq-q svg{flex-shrink:0;transition:transform .3s;color:var(--text-light)}
+.faq-item.open .faq-q svg{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a p{padding:0 0 20px;font-size:15px;color:var(--text-light);line-height:1.7}
+
+/* CTA */
+.cta-footer{padding:100px 0 40px;background:var(--footer-bg);color:#fff}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:80px}
+.cta-contact{margin-bottom:20px}
+.cta-contact a{display:block;font-size:16px;color:rgba(255,255,255,.7);margin-bottom:8px;transition:color .2s}
+.cta-contact a:hover{color:#fff}
+.cta-social{display:flex;gap:12px}
+.cta-social a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);transition:all .2s}
+.cta-social a:hover{border-color:#fff;color:#fff}
+.cta-form{display:flex;flex-direction:column;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-field label{display:block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.5);margin-bottom:6px}
+.form-field input,.form-field select{width:100%;padding:12px 16px;border:1px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.05);color:#fff;font-size:14px;font-family:inherit;transition:border-color .2s}
+.form-field input::placeholder{color:rgba(255,255,255,.3)}
+.form-field input:focus,.form-field select:focus{outline:none;border-color:var(--teal)}
+.form-field select{appearance:none;cursor:pointer}
+.form-field select option{background:var(--footer-bg);color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:40px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.4)}
+.footer-bottom a{color:rgba(255,255,255,.4);transition:color .2s}
+.footer-bottom a:hover{color:#fff}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .service-types-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:repeat(2,1fr)}
+  .expertise-grid{grid-template-columns:repeat(2,1fr)}
+  .value-grid{grid-template-columns:1fr}
+  .cta-grid{grid-template-columns:1fr;gap:48px}
+  .gallery-masonry{columns:2}
+}
+@media(max-width:768px){
+  .container{padding:0 20px}
+  .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--navy);flex-direction:column;justify-content:center;align-items:center;gap:24px;z-index:999}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:18px}
+  .dropdown{position:static;opacity:1;visibility:visible;transform:none;background:transparent;box-shadow:none;padding:0;text-align:center}
+  .dropdown a{color:rgba(255,255,255,.6);padding:8px 20px}
+  .mobile-toggle{display:block;z-index:1001}
+  .mobile-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+  .mobile-toggle.open span:nth-child(2){opacity:0}
+  .mobile-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .service-types-grid,.process-grid,.expertise-grid,.testimonials-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .hero{min-height:auto;padding:0}
+  .hero-content{padding:140px 0 80px}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+  .gallery-masonry{columns:1}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../../index.html" class="nav-logo">
+        <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" width="36" height="36">
+          <rect width="36" height="36" rx="8" fill="var(--red)"/>
+          <path d="M6 22.5c0-1 .4-1.8 1-2.3.3-.3.5-.7.5-1.2v-1.5c0-1.5.6-2.9 1.7-3.9l.8-.7c.5-.5.8-1.1.8-1.8v-.6c0-.8.5-1.5 1.2-1.8l2.5-1c.5-.2 1-.2 1.5 0l1.5.6c.8.3 1.7.5 2.5.5h2c1.7 0 3.2.7 4.3 1.8l1.2 1.2c.7.7 1 1.6 1 2.5v2.2c0 .8-.3 1.5-.8 2l-1.2 1.2v2.3c0 .8-.7 1.5-1.5 1.5h-1c-.8 0-1.5-.7-1.5-1.5V20h-1v2.5c0 .8-.7 1.5-1.5 1.5h-1c-.8 0-1.5-.7-1.5-1.5V20h-3.5l-2 2.8c-.3.4-.8.7-1.3.7H9.5c-.8 0-1.5-.3-2.2-.7-.8-.5-1.3-1.3-1.3-2.3zm5.5-7a1 1 0 100-2 1 1 0 000 2z" fill="#fff"/>
+          <path d="M8.5 14l-2-3.5c-.2-.3 0-.7.4-.7h2.3c.3 0 .5.2.6.4l.7 2.3" fill="#fff" opacity=".9"/>
+        </svg>
+        Rhino Ads
+      </a>
+      <div class="nav-links" id="nav-links">
+        <div class="has-dropdown">
+          <a href="../../index.html#services">Services</a>
+          <div class="dropdown">
+            <a href="../websites/">Websites</a>
+            <a href="../advertising/">Advertising</a>
+            <a href="../seo/">SEO</a>
+            <a href="../branding/">Branding</a>
+            <a href="../video/">Video</a>
+            <a href="./">Apps</a>
+          </div>
+        </div>
+        <div class="has-dropdown">
+          <a href="../../index.html#industries">Industries</a>
+          <div class="dropdown">
+            <a href="../../industries/restaurants/">Restaurants</a>
+            <a href="../../industries/roofing/">Roofing</a>
+            <a href="../../industries/law-firms/">Law Firms</a>
+            <a href="../../industries/healthcare/">Healthcare</a>
+            <a href="../../index.html#industries">Finance</a>
+            <a href="../../index.html#industries">E-Commerce</a>
+          </div>
+        </div>
+        <a href="../../index.html#work">Work</a>
+        <a href="../../index.html#blog">Blog</a>
+        <a href="#contact" class="btn btn-red">Let's Talk</a>
+      </div>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Premium App Development, Driven by Deep UX Expertise</h1>
+      <p>We craft intuitive, scalable digital tools that people actually want to use. From initial concept through post-launch optimization, every decision is grounded in user experience research and real-world performance data.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-red">Get a Free Consultation</a>
+        <a href="#process" class="btn btn-outline-white">See Our Process</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-header">
+      <div class="section-eyebrow" style="justify-content:center"><span></span> The Data Speaks</div>
+      <div class="section-heading" style="text-align:center">Why UX-Driven Apps Outperform</div>
+    </div>
+    <div class="stats-grid">
+      <div>
+        <div class="stat-num">100<em>%+</em></div>
+        <div class="stat-label">ROI</div>
+        <p class="stat-desc">Every $1 invested in UX returns up to $100 in measurable business value.</p>
+      </div>
+      <div>
+        <div class="stat-num">400<em>%</em></div>
+        <div class="stat-label">Conversion</div>
+        <p class="stat-desc">Effective UX design can raise conversion rates by up to 400%.</p>
+      </div>
+      <div>
+        <div class="stat-num">35<em>%</em></div>
+        <div class="stat-label">Retention</div>
+        <p class="stat-desc">UX-optimized apps see a 35% increase in 30-day retention rates.</p>
+      </div>
+      <div>
+        <div class="stat-num">50<em>%</em></div>
+        <div class="stat-label">Abandonment</div>
+        <p class="stat-desc">Half of all users abandon apps that deliver poor performance or confusing navigation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE CATEGORIES -->
+<section class="service-types">
+  <div class="container">
+    <div class="section-eyebrow"><span></span> What We Build</div>
+    <div class="section-heading">Apps That Solve Real Problems</div>
+    <p class="section-desc">Whether you need a consumer-facing product, an internal enterprise tool, or a rapid prototype to test your idea, we have you covered.</p>
+    <div class="service-types-grid">
+      <div class="st-card">
+        <div class="st-card-icon">
+          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        </div>
+        <h3>Consumer Apps</h3>
+        <p>Beautifully designed, high-performance mobile apps that delight users and drive engagement. We focus on seamless onboarding, intuitive navigation, and the kind of polish that earns five-star reviews.</p>
+      </div>
+      <div class="st-card">
+        <div class="st-card-icon">
+          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>Business & Enterprise Apps</h3>
+        <p>Streamline operations, improve internal workflows, and give your teams powerful tools they actually enjoy using. Built for reliability, security, and scale from day one.</p>
+      </div>
+      <div class="st-card">
+        <div class="st-card-icon">
+          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <h3>MVPs & Prototypes</h3>
+        <p>Validate your concept quickly and affordably. We build functional prototypes and minimum viable products that let you test real user behavior before committing to a full build.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE CAPABILITIES -->
+<section class="value">
+  <div class="container">
+    <div class="value-grid">
+      <div class="value-text">
+        <div class="section-eyebrow"><span></span> Why Rhino Ads</div>
+        <div class="section-heading">Design-Driven. Performance-Focused. Built to Scale.</div>
+        <h3>Efficient Process That Saves Time and Money</h3>
+        <p>Our streamlined development workflow eliminates wasted effort and keeps your project on track. We deliver on time and on budget through disciplined sprints, clear milestones, and transparent communication at every stage.</p>
+        <h3>Full-Cycle Development & Multi-Platform Support</h3>
+        <p>From concept to launch and beyond, our US-based team handles everything. We build native and cross-platform apps for iOS, Android, and web so your product reaches users wherever they are.</p>
+        <h3>Flexible and Tailored Ongoing Support</h3>
+        <p>Your app is a living product, not a one-time deliverable. We provide maintenance, performance monitoring, feature updates, and App Store optimization to keep your product growing after launch.</p>
+      </div>
+      <div class="value-images">
+        <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/web1.png" alt="App design example" loading="lazy">
+        <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/web5.png" alt="App development" loading="lazy">
+        <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/web6.png" alt="App interface detail" loading="lazy">
+        <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/web2.png" alt="App UX design" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="container">
+    <div class="section-eyebrow"><span></span> Our Work in Action</div>
+    <div class="section-heading">Crafted with Care, Built to Perform</div>
+    <p class="section-desc">A look at the quality and attention to detail we bring to every project.</p>
+    <div class="gallery-masonry">
+      <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/web1.png" alt="App project showcase 1" loading="lazy">
+      <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/web2-1.png" alt="App project showcase 2" loading="lazy">
+      <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/web2.png" alt="App project showcase 3" loading="lazy">
+      <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/web4.png" alt="App project showcase 4" loading="lazy">
+      <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/web5.png" alt="App project showcase 5" loading="lazy">
+      <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/web6.png" alt="App project showcase 6" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process section" id="process">
+  <div class="container">
+    <div class="section-eyebrow"><span></span> Our Process</div>
+    <div class="section-heading">How We Build Your App</div>
+    <p class="section-desc">A proven six-stage process that turns your idea into a polished, market-ready product.</p>
+    <div class="process-grid">
+      <div class="process-card">
+        <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/1.-Discovery-and-planning.png" alt="Discovery and planning" loading="lazy">
+        <div class="process-card-body">
+          <div class="process-card-num">Stage 01</div>
+          <h3>Discovery & Planning</h3>
+          <p>We start with deep research into your users, market, and competitive landscape. Stakeholder interviews and user personas define the goals your app needs to achieve.</p>
+        </div>
+      </div>
+      <div class="process-card">
+        <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/2.-Strategy-and-architecture.png" alt="Strategy and architecture" loading="lazy">
+        <div class="process-card-body">
+          <div class="process-card-num">Stage 02</div>
+          <h3>Strategy & Architecture</h3>
+          <p>User flows, information architecture, and technical specifications come together into a clear blueprint. Every screen and interaction is mapped before a single line of code is written.</p>
+        </div>
+      </div>
+      <div class="process-card">
+        <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/3.-Design.png" alt="Design and content creation" loading="lazy">
+        <div class="process-card-body">
+          <div class="process-card-num">Stage 03</div>
+          <h3>Design & Content Creation</h3>
+          <p>High-fidelity UI design and UX copywriting work in tandem. We create interactive prototypes so you can experience the app before development begins.</p>
+        </div>
+      </div>
+      <div class="process-card">
+        <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/4.-Development.png" alt="Development" loading="lazy">
+        <div class="process-card-body">
+          <div class="process-card-num">Stage 04</div>
+          <h3>Development</h3>
+          <p>Our US-based engineers build clean, performant code in agile sprints. You review working builds at every milestone so there are never any surprises at launch.</p>
+        </div>
+      </div>
+      <div class="process-card">
+        <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/5.-Testing-and-launch.png" alt="Testing and launch" loading="lazy">
+        <div class="process-card-body">
+          <div class="process-card-num">Stage 05</div>
+          <h3>Testing & Launch</h3>
+          <p>Rigorous QA across devices, operating systems, and edge cases. We handle App Store submissions, performance benchmarking, and a smooth launch day rollout.</p>
+        </div>
+      </div>
+      <div class="process-card">
+        <img src="https://www.cardwellbeach.com/wp-content/uploads/2024/08/6.-Support.png" alt="Post-launch support" loading="lazy">
+        <div class="process-card-body">
+          <div class="process-card-num">Stage 06</div>
+          <h3>Post-Launch Support</h3>
+          <p>Bug monitoring, analytics review, feature iteration, and OS update compatibility. We stay with your product to ensure it keeps growing and improving long after launch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="expertise">
+  <div class="container">
+    <div class="section-eyebrow"><span></span> Capabilities</div>
+    <div class="section-heading">Expertise at Every Layer</div>
+    <p class="section-desc">Every app we build is backed by deep expertise across UX, design, engineering, and product strategy.</p>
+    <div class="expertise-grid">
+      <div class="exp-card">
+        <div class="exp-card-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+        </div>
+        <h3>User Experience & Flow Architecture</h3>
+        <p>We map every user journey and interaction to eliminate friction, reduce cognitive load, and guide users toward their goals with clarity.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-card-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Integrated Feature & Content Strategy</h3>
+        <p>Feature prioritization and content planning aligned with your business objectives, ensuring every screen serves a purpose.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-card-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+        </div>
+        <h3>Conversion-Optimized Interface Design</h3>
+        <p>Every layout, button placement, and interaction is driven by data and best practices to maximize signups, purchases, and engagement.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-card-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z"/></svg>
+        </div>
+        <h3>Precision Copy & Microcopy</h3>
+        <p>From onboarding screens to error states, every word is intentional. Our UX writing guides users, builds trust, and reinforces your brand voice.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-card-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        </div>
+        <h3>Polished, Brand-Forward Visual Design</h3>
+        <p>Pixel-perfect interfaces that feel unmistakably yours. We create cohesive design systems that scale gracefully across every screen and platform.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-card-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3>Solid Foundations</h3>
+        <p>Clean architecture, fast load times, robust security, and infrastructure built to handle growth. The invisible stuff that determines whether your app thrives or fails.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-eyebrow"><span></span> Testimonials</div>
+    <div class="section-heading">What Our Clients Say About Working With Us</div>
+    <p class="section-desc">Hear from businesses that trusted Rhino Ads to bring their app vision to life.</p>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <blockquote>Rhino Ads captured the essence of our brand and translated it into an app experience that our users genuinely love. It's been a game-changer for customer engagement.</blockquote>
+        <div class="testi-author">Steve R.</div>
+        <div class="testi-role">CEO, Summit Properties</div>
+      </div>
+      <div class="testi-card">
+        <blockquote>Working with the Rhino Ads team has been outstanding from start to finish. They took a complicated idea and turned it into something elegant and easy to use.</blockquote>
+        <div class="testi-author">Terry K.</div>
+        <div class="testi-role">Founder, Apex Wealth Advisors</div>
+      </div>
+      <div class="testi-card">
+        <blockquote>The app performs flawlessly, our conversion rates jumped, and the whole project was delivered ahead of schedule. I wouldn't trust anyone else with our digital products.</blockquote>
+        <div class="testi-author">Shane M.</div>
+        <div class="testi-role">CEO, Gunner Roofing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="section-eyebrow" style="justify-content:center"><span></span> FAQ</div>
+      <div class="section-heading">Common Questions About App Development</div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">
+          How much does app development cost?
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a"><p>App development costs depend on complexity, platform, and feature scope. A focused MVP can start around $15,000, while a full-featured multi-platform app typically ranges from $50,000 to $150,000+. During our discovery phase we'll give you a clear, detailed estimate tailored to your project.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Can I see examples of your past work?
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a"><p>Absolutely. You can see featured projects on our homepage, or reach out and we'll share a tailored portfolio based on your industry and goals. We're happy to walk you through the strategy behind each project.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Where is your team located?
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a"><p>Our entire team is US-based, with members working across the country. We work with clients nationwide and maintain seamless communication regardless of timezone. No offshore handoffs, no communication gaps.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          I'm not ready for a consultation yet. How can I stay in touch?
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a"><p>No problem at all. Check out our blog for insights on app development, UX strategy, and digital marketing. Or send us an email anytime — we're happy to chat whenever you're ready, with zero pressure.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FOOTER -->
+<section class="cta-footer" id="contact">
+  <div class="container">
+    <div class="cta-grid">
+      <div>
+        <div class="section-eyebrow" style="color:var(--teal)"><span style="background:var(--teal)"></span> Reach Out</div>
+        <div class="section-heading" style="color:#fff">Let's build your next app.</div>
+        <p class="section-desc">Tell us about your project and we'll get back to you within 24 hours with a plan.</p>
+        <div class="cta-contact">
+          <a href="mailto:hello@rhinoads.com">hello@rhinoads.com</a>
+          <a href="tel:+14754778884">(475) 477-8884</a>
+        </div>
+        <div class="cta-social">
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="#" aria-label="X / Twitter"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <form class="cta-form" action="https://formspree.io/f/mbdaqkgv" method="POST">
+          <input type="hidden" name="_subject" value="New Lead from Rhino Ads">
+          <input type="hidden" name="_next" value="https://rhinoads.co/">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fname">First Name *</label>
+              <input type="text" id="fname" name="firstName" placeholder="John" required>
+            </div>
+            <div class="form-field">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lastName" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="john@company.com" required>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone *</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+            </div>
+          </div>
+          <div class="form-field full">
+            <label for="website">Current Website or App URL</label>
+            <input type="url" id="website" name="website" placeholder="https://yourcompany.com">
+          </div>
+          <div class="form-field full">
+            <label for="budget">App Development Budget</label>
+            <select id="budget" name="budget">
+              <option value="">Select a range...</option>
+              <option>Under $15,000</option>
+              <option>$15,000 - $30,000</option>
+              <option>$30,000 - $75,000</option>
+              <option>$75,000 - $150,000</option>
+              <option>$150,000+</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-red">Get a Free App Consultation</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Rhino Ads. All rights reserved.</p>
+      <div style="display:flex;gap:20px">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Mobile menu
+const toggle = document.getElementById('mobile-toggle');
+const navLinks = document.getElementById('nav-links');
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  toggle.classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    toggle.classList.remove('open');
+  });
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+</script>
+</body>
+</html>
