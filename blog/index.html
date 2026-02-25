@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blog — Marketing Tips, SEO Guides & Industry Insights | Rhino Ads</title>
+<meta name="description" content="Expert marketing insights from Rhino Ads. SEO guides, advertising strategies, web design tips, and industry-specific marketing advice for small businesses.">
+<meta name="keywords" content="marketing blog, SEO tips, advertising guides, web design best practices, small business marketing, digital marketing insights">
+<link rel="canonical" href="https://rhinoads.co/blog/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Rhino Ads">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog — Marketing Tips, SEO Guides & Industry Insights">
+<meta property="og:description" content="Expert marketing insights from Rhino Ads. SEO guides, advertising strategies, web design tips, and industry-specific marketing advice.">
+<meta property="og:url" content="https://rhinoads.co/blog/">
+<meta property="og:site_name" content="Rhino Ads">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://rhinoads.co/og-image.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog — Marketing Tips & Industry Insights | Rhino Ads">
+<meta name="twitter:description" content="Expert marketing insights from Rhino Ads. SEO guides, advertising strategies, and web design tips.">
+<meta name="twitter:image" content="https://rhinoads.co/og-image.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="../rhino-logo.svg">
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Rhino Ads Blog",
+  "description": "Expert marketing insights, SEO guides, advertising strategies, and industry-specific advice for small businesses.",
+  "url": "https://rhinoads.co/blog/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rhino Ads",
+    "url": "https://rhinoads.co",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rhinoads.co/rhino-logo.svg"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://rhinoads.co/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://rhinoads.co/blog/"
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#004466;
+  --navy-dark:#001A45;
+  --red:#e93f33;
+  --red-hover:#d4342a;
+  --teal:#42BFC1;
+  --dark:#2E2E2E;
+  --text:#333;
+  --text-light:#666;
+  --bg:#fff;
+  --bg-off:#f5f6f5;
+  --border:#ddd;
+  --footer-bg:#1a1a2e;
+  --max-w:1200px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--text);line-height:1.6;background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 32px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0;transition:background .4s,box-shadow .4s;background:var(--navy);box-shadow:0 2px 20px rgba(0,0,0,.15)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo{font-size:22px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:36px;height:36px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.85);transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-links .has-dropdown{position:relative;cursor:pointer}
+.nav-links .has-dropdown:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown{position:absolute;top:100%;left:-12px;min-width:180px;background:#fff;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.12);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .25s}
+.dropdown a{display:block;padding:10px 20px;font-size:13px;color:var(--dark);text-transform:none;letter-spacing:0;font-weight:500}
+.dropdown a:hover{background:var(--bg-off);color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 28px;border-radius:6px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;border:none;cursor:pointer;transition:all .3s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-hover)}
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.mobile-toggle span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:all .3s}
+
+/* HERO */
+.blog-hero{padding:140px 0 60px;background:linear-gradient(135deg,#004466,#42BFC1);color:#fff;text-align:center}
+.blog-hero h1{font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.2;margin-bottom:16px}
+.blog-hero p{font-size:18px;color:rgba(255,255,255,.8);max-width:600px;margin:0 auto}
+
+/* BLOG GRID */
+.blog-section{padding:80px 0;background:var(--bg-off)}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1100px;margin:0 auto}
+.blog-card{background:#fff;border-radius:12px;overflow:hidden;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.1)}
+.blog-card-img{height:180px;background-size:cover;background-position:center}
+.blog-card:nth-child(6n+1) .blog-card-img{background:linear-gradient(135deg,#e93f33,#ff7b6b)}
+.blog-card:nth-child(6n+2) .blog-card-img{background:linear-gradient(135deg,#1a1a2e,#004466)}
+.blog-card:nth-child(6n+3) .blog-card-img{background:linear-gradient(135deg,#42BFC1,#004466)}
+.blog-card:nth-child(6n+4) .blog-card-img{background:linear-gradient(135deg,#004466,#001A45)}
+.blog-card:nth-child(6n+5) .blog-card-img{background:linear-gradient(135deg,#ff7b6b,#e93f33)}
+.blog-card:nth-child(6n+6) .blog-card-img{background:linear-gradient(135deg,#001A45,#42BFC1)}
+.blog-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.blog-tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--teal);margin-bottom:10px}
+.blog-card h3{font-size:17px;font-weight:700;color:var(--navy-dark);line-height:1.4;margin-bottom:8px}
+.blog-card p{font-size:13px;color:var(--text-light);line-height:1.6;flex:1}
+.blog-card .read-more{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);margin-top:16px;display:inline-block}
+
+/* CTA FOOTER */
+.cta-footer{padding:100px 0 40px;background:var(--footer-bg);color:#fff}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:80px}
+.section-eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--red);margin-bottom:16px}
+.section-eyebrow span{width:28px;height:2px;background:var(--red);border-radius:2px}
+.section-heading{font-size:clamp(28px,5vw,42px);font-weight:800;color:var(--navy-dark);line-height:1.15;margin-bottom:20px}
+.section-desc{font-size:17px;color:var(--text-light);max-width:540px;line-height:1.7;margin-bottom:48px}
+.cta-contact{margin-bottom:20px}
+.cta-contact a{display:block;font-size:16px;color:rgba(255,255,255,.7);margin-bottom:8px;transition:color .2s}
+.cta-contact a:hover{color:#fff}
+.cta-social{display:flex;gap:12px}
+.cta-social a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);transition:all .2s}
+.cta-social a:hover{border-color:#fff;color:#fff}
+.cta-form{display:flex;flex-direction:column;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-field label{display:block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.5);margin-bottom:6px}
+.form-field input,.form-field select{width:100%;padding:12px 16px;border:1px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.05);color:#fff;font-size:14px;font-family:inherit;transition:border-color .2s}
+.form-field input::placeholder{color:rgba(255,255,255,.3)}
+.form-field input:focus,.form-field select:focus{outline:none;border-color:var(--teal)}
+.form-field select{appearance:none;cursor:pointer}
+.form-field select option{background:var(--footer-bg);color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:40px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.4)}
+.footer-bottom a{color:rgba(255,255,255,.4);transition:color .2s}
+.footer-bottom a:hover{color:#fff}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .blog-grid{grid-template-columns:repeat(2,1fr)}
+  .cta-grid{grid-template-columns:1fr;gap:48px}
+}
+@media(max-width:768px){
+  .container{padding:0 20px}
+  .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--navy);flex-direction:column;justify-content:center;align-items:center;gap:24px;z-index:999}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:18px}
+  .dropdown{position:static;opacity:1;visibility:visible;transform:none;background:transparent;box-shadow:none;padding:0;text-align:center}
+  .dropdown a{color:rgba(255,255,255,.6);padding:8px 20px}
+  .mobile-toggle{display:block;z-index:1001}
+  .mobile-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+  .mobile-toggle.open span:nth-child(2){opacity:0}
+  .mobile-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+  .blog-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../" class="nav-logo">
+        <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" width="36" height="36">
+          <rect width="36" height="36" rx="8" fill="var(--red)"/>
+          <path d="M6 22.5c0-1 .4-1.8 1-2.3.3-.3.5-.7.5-1.2v-1.5c0-1.5.6-2.9 1.7-3.9l.8-.7c.5-.5.8-1.1.8-1.8v-.6c0-.8.5-1.5 1.2-1.8l2.5-1c.5-.2 1-.2 1.5 0l1.5.6c.8.3 1.7.5 2.5.5h2c1.7 0 3.2.7 4.3 1.8l1.2 1.2c.7.7 1 1.6 1 2.5v2.2c0 .8-.3 1.5-.8 2l-1.2 1.2v2.3c0 .8-.7 1.5-1.5 1.5h-1c-.8 0-1.5-.7-1.5-1.5V20h-1v2.5c0 .8-.7 1.5-1.5 1.5h-1c-.8 0-1.5-.7-1.5-1.5V20h-3.5l-2 2.8c-.3.4-.8.7-1.3.7H9.5c-.8 0-1.5-.3-2.2-.7-.8-.5-1.3-1.3-1.3-2.3zm5.5-7a1 1 0 100-2 1 1 0 000 2z" fill="#fff"/>
+          <path d="M8.5 14l-2-3.5c-.2-.3 0-.7.4-.7h2.3c.3 0 .5.2.6.4l.7 2.3" fill="#fff" opacity=".9"/>
+        </svg>
+        Rhino Ads
+      </a>
+      <div class="nav-links" id="nav-links">
+        <div class="has-dropdown">
+          <a href="/#services">Services</a>
+          <div class="dropdown">
+            <a href="/#services">Advertising</a>
+            <a href="/#services">Web Design</a>
+            <a href="/#services">SEO</a>
+            <a href="/#services">Branding</a>
+            <a href="/#services">Video</a>
+            <a href="/#services">Apps</a>
+          </div>
+        </div>
+        <div class="has-dropdown">
+          <a href="/#industries">Industries</a>
+          <div class="dropdown">
+            <a href="/#industries">Roofing</a>
+            <a href="/#industries">Finance</a>
+            <a href="/#industries">E-Commerce</a>
+            <a href="/#industries">Real Estate</a>
+            <a href="/#industries">Local Restaurant</a>
+          </div>
+        </div>
+        <a href="/#work">Work</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#contact" class="btn btn-red">Let's Talk</a>
+      </div>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <h1>The Rhino Ads Blog</h1>
+    <p>Marketing insights, SEO guides, and proven strategies to grow your business online.</p>
+  </div>
+</section>
+
+<!-- BLOG GRID -->
+<section class="blog-section">
+  <div class="container">
+    <div class="blog-grid">
+
+      <a href="/blog/social-media-marketing.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Social Media</div>
+          <h3>Social Media Marketing for Small Businesses: A 2026 Guide</h3>
+          <p>A practical guide to choosing platforms, building a content strategy, and measuring social media ROI.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/google-business-profile-optimization.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Local SEO</div>
+          <h3>Google Business Profile Optimization: The Complete 2026 Guide</h3>
+          <p>Everything you need to optimize your GBP listing and dominate local search results.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/email-marketing-roi.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Digital Marketing</div>
+          <h3>Email Marketing ROI: Why It Still Beats Every Other Channel</h3>
+          <p>The data behind email's dominance and how to build campaigns that drive real revenue.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/how-to-choose-marketing-agency.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Strategy</div>
+          <h3>How to Choose the Right Marketing Agency for Your Business</h3>
+          <p>Red flags, key questions, and budget expectations when hiring a marketing partner.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/video-marketing-strategy.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Video</div>
+          <h3>Video Marketing Strategy for Small Businesses in 2026</h3>
+          <p>Types of video content, production tips on a budget, and how to measure video ROI.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/ecommerce-seo-guide.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">SEO</div>
+          <h3>E-commerce SEO: How to Rank Your Online Store in 2026</h3>
+          <p>Product page optimization, category strategy, and technical SEO for online stores.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/healthcare-marketing-guide.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Healthcare</div>
+          <h3>Healthcare Marketing: Balancing Compliance and Growth</h3>
+          <p>HIPAA-compliant marketing strategies for medical practices and healthcare businesses.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/real-estate-digital-marketing.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Real Estate</div>
+          <h3>Real Estate Digital Marketing: The Complete 2026 Guide</h3>
+          <p>SEO, paid ads, social media, and video strategies for agents and brokers.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/b2b-lead-generation.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">B2B</div>
+          <h3>B2B Lead Generation: Strategies That Actually Work in 2026</h3>
+          <p>LinkedIn, content funnels, landing pages, and pipeline measurement for B2B companies.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/brand-identity-design.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Branding</div>
+          <h3>Brand Identity Design: Building a Memorable Brand</h3>
+          <p>Logo, color, typography, voice — everything that goes into a strong brand identity.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/restaurant-local-seo.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Local SEO</div>
+          <h3>Restaurant Local SEO: How to Get Found on Google in 2026</h3>
+          <p>Google Business Profile, reviews, local keywords, and citation strategy for restaurants.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/roofing-seo-guide.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">SEO</div>
+          <h3>SEO for Roofing Companies: The Complete 2026 Guide</h3>
+          <p>Everything roofers need to rank in local search, build citations, and generate organic leads.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/digital-advertising-budget.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Paid Media</div>
+          <h3>How Much Should You Spend on Digital Ads in 2026?</h3>
+          <p>A data-driven guide to setting the right ad budget for your business size and goals.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/landing-page-best-practices.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Web Design</div>
+          <h3>Landing Page Best Practices That Actually Convert in 2026</h3>
+          <p>Design patterns, copy frameworks, and CTA strategies that turn visitors into leads.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/roofing-ppc-guide.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Paid Media</div>
+          <h3>Google Ads for Roofing Companies: Stop Wasting Your Budget</h3>
+          <p>Campaign structure, keyword strategy, and bid optimization for roofing contractors.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/law-firm-seo.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">SEO</div>
+          <h3>SEO for Law Firms: The Complete 2026 Guide</h3>
+          <p>How attorneys can dominate local search, earn client inquiries, and outrank competitors.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/restaurant-facebook-ads.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Paid Media</div>
+          <h3>Facebook Ads for Restaurants: A Complete Guide for 2026</h3>
+          <p>Build campaigns that fill tables and drive online orders on Facebook and Instagram.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/blog/website-redesign-checklist.html" class="blog-card">
+        <div class="blog-card-img"></div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Web Design</div>
+          <h3>Website Redesign Checklist for Small Businesses</h3>
+          <p>Everything you need to plan, execute, and launch a redesign that drives results.</p>
+          <span class="read-more">Read More &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA FOOTER -->
+<section class="cta-footer" id="contact">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-left">
+        <div class="section-eyebrow" style="color:var(--teal)"><span style="background:var(--teal)"></span> Reach Out</div>
+        <div class="section-heading" style="color:#fff">Work with us.</div>
+        <p class="section-desc">Fill out the form to speak with someone from our team. We'll get back to you within 24 hours.</p>
+        <div class="cta-contact">
+          <a href="mailto:hello@rhinoads.com">hello@rhinoads.com</a>
+          <a href="tel:+14754778884">(475) 477-8884</a>
+        </div>
+        <div class="cta-social">
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="#" aria-label="X / Twitter"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        </div>
+      </div>
+      <div class="cta-right">
+        <form class="cta-form" action="https://formspree.io/f/mbdaqkgv" method="POST">
+          <input type="hidden" name="_subject" value="New Lead from Rhino Ads Blog">
+          <input type="hidden" name="_next" value="https://rhinoads.co/">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fname">First Name *</label>
+              <input type="text" id="fname" name="firstName" placeholder="John" required>
+            </div>
+            <div class="form-field">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lastName" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="john@company.com" required>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone *</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+            </div>
+          </div>
+          <div class="form-field full">
+            <label for="website">Website URL</label>
+            <input type="url" id="website" name="website" placeholder="https://yourcompany.com">
+          </div>
+          <div class="form-field full">
+            <label for="budget">Monthly Marketing Budget</label>
+            <select id="budget" name="budget">
+              <option value="">Select a range...</option>
+              <option>Under $5,000</option>
+              <option>$5,000 - $10,000</option>
+              <option>$10,000 - $25,000</option>
+              <option>$25,000 - $50,000</option>
+              <option>$50,000+</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-red">Get Your Free Audit</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Rhino Ads. All rights reserved.</p>
+      <div style="display:flex;gap:20px">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const toggle = document.getElementById('mobile-toggle');
+const navLinks = document.getElementById('nav-links');
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  toggle.classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    toggle.classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
